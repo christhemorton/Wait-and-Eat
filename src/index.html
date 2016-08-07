@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" ng-app = "app">
+    <head>
+        <meta charset="utf-8">
+        <title>Wait and Eat</title>
+        <!--Bootstrap latest compiled and minified CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!--Optional theme-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!--Custom CSS-->
+        <link rel="stylesheet" href="content/css/app.css"/>
+    </head>
+    <body>
+        
+        <!-- navbar directive that stays at top of every page -->
+        <gz-navbar></gz-navbar>
+        
+        <!--Main content that changes based on route-->
+        <div ng-view class="container"></div>
+        
+        <!--Third-party JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>    
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBchFG_dSBHRxvVo5lbXUjNlVPe6UpY8xY",
+                authDomain: "waitneat-project.firebaseapp.com",
+                databaseURL: "https://waitneat-project.firebaseio.com",
+                storageBucket: "waitneat-project.appspot.com",
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+        
+        <!-- Main app module -->
+        <script src="app/app.module.js"></script>
+        
+        <!-- auth module -->
+        <script src="app/auth/auth.module.js"></script>
+        <script src="app/auth/config.route.js"></script>
+        <script src="app/auth/auth.controller.js"></script>
+        <script src="app/auth/auth.service.js"></script>
+        <script src="app/auth/authForm.directive.js"></script>
+        
+        <!-- Core module -->
+        <script src="app/core/core.module.js"></script>
+        <script src="app/core/party.service.js"></script>
+        <script src="app/Core/firebaseData.service.js"></script>
+        <script src="app/Core/textMessage.service.js"></script>
+        
+        <!-- Landing module -->
+        <script src="app/landing/landing.module.js"></script>
+        <script src="app/landing/config.route.js"></script>
+        
+        <!-- Layout module -->
+        <script src="app/layout/layout.module.js"></script>
+        <script src="app/layout/navbar.directive.js"></script>
+        
+        <!-- waitList module -->
+        <script src="app/waitList/waitList.module.js"></script>
+        <script src="app/waitList/config.route.js"></script>
+        <script src="app/waitList/waitList.controller.js"></script>
+        <script src="app/waitList/directives/partyForm.directive.js"></script>
+        <script src="app/waitList/directives/partyTable.directive.js"></script>
+        
+        
+    </body>
+</html>
